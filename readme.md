@@ -21,7 +21,7 @@ Your home is now set up perfectly for bedtime. Sweet dreams! 🌙
 ```
 This demonstrates how AI agents can orchestrate multiple real-life devices to fulfill a complex, user-centered task.
 
-The striking things is, we don't need to program this workflow, it is automatically discovered by the AI Agent and executed. We can give detailed instructions where necessary to make sure the agent is not confused, but for common cases like planning the going to bed scenario, the current reasoning capability of most SOTA models would be sufficient.
+The striking things is, we don't need to program this workflow, it is automatically discovered by the AI Agent and executed. We can give detailed instructions where necessary to make sure the agent is not confused, but for common cases like planning the going to bed scenario, the current reasoning capability of most SOTA models can be sufficient.
 
 ## Available MCP Tools
 
@@ -53,7 +53,7 @@ The striking things is, we don't need to program this workflow, it is automatica
 
 ## How to Add to Claude Desktop
 
-You'll need .NET Framework 9 Runtime to run the MCP Server in your system.
+You'll need [.NET 9](https://dotnet.microsoft.com/en-us/download/dotnet/9.0) to build the MCP Server in your system.
 
 To add this MCP server to Claude Desktop, add the following to your configuration:
 
