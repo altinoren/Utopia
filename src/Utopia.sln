@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utopia", "Server\Utopia.csproj", "{464C562E-59F1-32B6-F0A9-7409A6FDB8FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtopiaTest", "Test\UtopiaTest.csproj", "{279B1B2C-079A-1047-2B3F-681165325123}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{464C562E-59F1-32B6-F0A9-7409A6FDB8FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{464C562E-59F1-32B6-F0A9-7409A6FDB8FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{464C562E-59F1-32B6-F0A9-7409A6FDB8FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{464C562E-59F1-32B6-F0A9-7409A6FDB8FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{279B1B2C-079A-1047-2B3F-681165325123}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{279B1B2C-079A-1047-2B3F-681165325123}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{279B1B2C-079A-1047-2B3F-681165325123}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{279B1B2C-079A-1047-2B3F-681165325123}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E33ED30-AC6D-47DC-B6A4-3DA6FE39782C}
+	EndGlobalSection
+EndGlobal
