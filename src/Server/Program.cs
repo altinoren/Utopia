@@ -26,7 +26,6 @@ builder.Services
     .AddMcpServer()
     .WithStdioServerTransport()
     .WithToolsFromAssembly(typeof(Program).Assembly)
-    .WithTools<SmartLock>()
     .WithResourcesFromAssembly(typeof(Program).Assembly)
     .WithPromptsFromAssembly(typeof(Program).Assembly)
     //.WithSubscribeToResourcesHandler(async (ctx, ct) =>
