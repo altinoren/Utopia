@@ -8,6 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\ref-empty.jpg" />
+    <None Remove="Resources\ref-empty.png" />
+    <None Remove="Resources\ref-full.jpg" />
+    <None Remove="Resources\ref-full.png" />
+    <None Remove="Resources\ref-half.jpg" />
+    <None Remove="Resources\ref-half.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ref-empty.jpg" />
+    <EmbeddedResource Include="Resources\ref-full.jpg" />
+    <EmbeddedResource Include="Resources\ref-half.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.5" />
     <PackageReference Include="ModelContextProtocol" Version="0.1.0-preview.14" />
     <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.12.0" />
