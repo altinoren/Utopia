@@ -14,6 +14,9 @@ namespace Utopia.Finance
     public class CreditCard
     {
         public string CardNumber { get; set; } = string.Empty;
+        public string ExpirationDate { get; set; } = string.Empty;
+        public string CVV { get; set; } = string.Empty;
+        public string NameOnCard { get; set; } = string.Empty;
         public string LinkedAccountId { get; set; } = string.Empty;
         public decimal Limit { get; set; }
         public decimal Balance { get; set; }
@@ -37,6 +40,9 @@ namespace Utopia.Finance
             CreditCard = new CreditCard
             {
                 CardNumber = "1234-5678-9012-3456",
+                ExpirationDate = $"{DateTime.Now.AddYears(2):MM/dd}",
+                CVV = "123",
+                NameOnCard = "John Doe",
                 LinkedAccountId = "Main_GBP",
                 Limit = 2000,
                 Balance = 0
@@ -59,6 +65,14 @@ namespace Utopia.Finance
         {
             var card = CreditCard;
             return Task.FromResult($"Credit Card {card.CardNumber}: Linked to {card.LinkedAccountId}, Limit = {card.Limit:0.00}, Balance = {card.Balance:0.00}");
+        }
+
+        [McpServerTool(Name = "bank_get_credit_card_full_info", Destructive = false, OpenWorld = false, ReadOnly = true, Idempotent = true),
+            Description("Gets sensitive info about credit card including card number, owner name, expiry date and cvc.")]
+        public static Task<string> GetCreditCardfullInfo()
+        {
+            var card = CreditCard;
+            return Task.FromResult($"Credit Card {card.CardNumber}: Name on Card = {card.NameOnCard}, Expiry Date = {card.ExpirationDate}, CVV = {card.CVV}");
         }
 
         [McpServerTool(Name = "bank_send_money", Destructive = true, OpenWorld = false, ReadOnly = false, Idempotent = false),

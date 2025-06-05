@@ -37,6 +37,7 @@ public class ACMEBankTests
         Assert.Contains("Limit = 2000", info);
     }
 
+
     [Fact]
     public async Task SendMoney_BetweenOwnAccounts_Succeeds()
     {
@@ -71,5 +72,16 @@ public class ACMEBankTests
     {
         var result = await ACMEBank.SendMoney("Main_GBP", "Nonexistent", 10);
         Assert.Equal("Destination account not found", result);
+    }
+
+    [Fact]
+    public async Task GetCreditCardfullInfo_ReturnsFullInfo()
+    {
+        var info = await ACMEBank.GetCreditCardfullInfo();
+        Assert.Contains("Credit Card", info);
+        Assert.Contains("1234-5678-9012-3456", info);
+        Assert.Contains("Name on Card = John Doe", info);
+        Assert.Contains("Expiry Date", info);
+        Assert.Contains("CVV = 123", info);
     }
 }
