@@ -29,25 +29,25 @@ The striking things is, we don't need to program this workflow, it is automatica
 - **AirQualityControl**: Simulate and manage air quality.
 - **Lighting**: Control smart lighting in any room.
 - **MultiRoomAudio**: Play music or playlists in one or more rooms.
+- **Refrigerator**: Provides the picture of contents that can be used to check stock status inside.
 - **RobotVacuum**: Simulate a robot vacuum's cleaning schedule and state.
+- **SmartBed**: Monitor sleep and provide adjustable climate control.
 - **SmartBlinds**: Adjust or schedule the position of smart blinds.
 - **SmartLock**: Lock or unlock the front door.
 - **SmartThermostat**: Set and monitor room temperatures.
 - **AutonomousElectricVehicle**: Simulate an autonomous EV's driving, charging, and trip scheduling. Send to a coordinate, start charging, auto-park.
 - **ACMEBank**: Simulate basic banking operations, accounts, and credit card management.
+- **ACMEGrocery**: Simulate grocery shopping with access to past shopping data. Can be combined with refrigerator's output.
 
 ## Available MCP Resources
 
-- **Rooms**: List of rooms in the house. Can be used with room dependend tools light lightnong or room audio.
+- **Rooms**: List of rooms in the house. Can be used with tools that require a room, like lightning or room audio.
 - **Locations**: List of well known locations. Currently can be used with EV tool.
 
 ## TODO: Example tools to implement in the future
-- **SmartRefrigerator**: Identify and track contents.
-- **GroceryShopping**: Simulate grocery shopping with access to past shopping data for agents. Can be combined with refrigirator's output.
 - **PickupDrone**: Simulate a drone for short-distance pickups from neighbors or local shops.
 - **GardenManagementRobot**: Automate weeding, planting, plant care, and produce harvesting.
 - **RoboticKitchen**: Simulate meal preparation, cooking, and kitchen management.
-- **SmartBed**: Monitor sleep and provide adjustable climate control.
 - **MedicationAndCareAssistant**: Assist with medication schedules and basic care, supporting elderly users.
 
 
