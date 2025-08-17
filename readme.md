@@ -1,4 +1,5 @@
 # Utopia MCP Server
+[![Trust Score](https://archestra.ai/mcp-catalog/api/badge/quality/altinoren/Utopia)](https://archestra.ai/mcp-catalog/altinoren__utopia)
 
 Utopia is a simulation MCP Server designed to test and experiment with common household items, both those available today and those likely to exist in the near future, using AI Agents. This project provides a set of simulated smart home and lifestyle devices, allowing you to interact with them through AI agents.
 
