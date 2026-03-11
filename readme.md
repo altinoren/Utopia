@@ -1,5 +1,7 @@
 # Utopia MCP Server
 
+[![MCPAmpel](https://img.shields.io/endpoint?url=https://mcpampel.com/badge/altinoren/utopia.json)](https://mcpampel.com/repo/altinoren/utopia)
+
 Utopia is a simulation MCP Server designed to test and experiment with common household items, both those available today and those likely to exist in the near future, using AI Agents. This project provides a set of simulated smart home and lifestyle devices, allowing you to interact with them through AI agents.
 
 The main idea is to explore how AI agents can discover and utilize multiple MCP endpoints simultaneously to achieve complex, user-requested tasks in household environments.
