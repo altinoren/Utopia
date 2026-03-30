@@ -71,3 +71,8 @@ To add this MCP server to Claude Desktop, add the following to your configuratio
   }
 }
 ```
+
+## Hosted deployment
+
+A hosted deployment is available on [Fronteir AI](https://fronteir.ai/mcp/altinoren-utopia).
+
