@@ -53,7 +53,7 @@ The striking things is, we don't need to program this workflow, it is automatica
 
 ## How to Add to Claude Desktop
 
-You'll need [.NET 9](https://dotnet.microsoft.com/en-us/download/dotnet/9.0) to build the MCP Server in your system.
+You'll need [.NET 10](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) to build the MCP Server in your system.
 
 To add this MCP server to Claude Desktop, add the following to your configuration:
 

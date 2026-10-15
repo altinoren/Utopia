@@ -1,9 +1,6 @@
-﻿using Microsoft.Extensions.AI;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using ModelContextProtocol;
-using ModelContextProtocol.Protocol;
 using ModelContextProtocol.Server;
 using OpenTelemetry;
 using OpenTelemetry.Logs;
@@ -19,47 +16,13 @@ builder.Logging.AddConsole(consoleLogOptions =>
     consoleLogOptions.LogToStandardErrorThreshold = LogLevel.Trace;
 });
 
-HashSet<string> subscriptions = [];
-var _minimumLoggingLevel = LoggingLevel.Debug;
 
 builder.Services
     .AddMcpServer()
     .WithStdioServerTransport()
     .WithToolsFromAssembly(typeof(Program).Assembly)
     .WithResourcesFromAssembly(typeof(Program).Assembly)
-    .WithPromptsFromAssembly(typeof(Program).Assembly)
-    //.WithSubscribeToResourcesHandler(async (ctx, ct) =>
-    //{
-    //     var uri = ctx.Params?.Uri;
-
-    //     if (uri is not null)
-    //     {
-    //         subscriptions.Add(uri);
-
-    //         await ctx.Server.RequestSamplingAsync([
-    //             new ChatMessage(ChatRole.System, "You are a helpful test server"),
-    //            new ChatMessage(ChatRole.User, $"Resource {uri}, context: A new subscription was started"),
-    //        ],
-    //         options: new ChatOptions
-    //         {
-    //             MaxOutputTokens = 100,
-    //             Temperature = 0.7f,
-    //         },
-    //         cancellationToken: ct);
-    //     }
-
-    //     return new EmptyResult();
-    //})
-    //.WithUnsubscribeFromResourcesHandler(async (ctx, ct) =>
-    //{
-    //    var uri = ctx.Params?.Uri;
-    //    if (uri is not null)
-    //    {
-    //        subscriptions.Remove(uri);
-    //    }
-    //    return new EmptyResult();
-    //})
-    ;
+    .WithPromptsFromAssembly(typeof(Program).Assembly);
 
 
 ResourceBuilder resource = ResourceBuilder.CreateDefault().AddService("utopia");
@@ -69,11 +32,6 @@ builder.Services.AddOpenTelemetry()
     .WithLogging(b => b.SetResourceBuilder(resource))
     .UseOtlpExporter();
 
-builder.Services.AddSingleton(subscriptions);
-builder.Services.AddHostedService<SubscriptionMessageSender>();
-builder.Services.AddHostedService<LoggingUpdateMessageSender>();
-
-builder.Services.AddSingleton<Func<LoggingLevel>>(_ => () => _minimumLoggingLevel);
 
 await builder.Build().RunAsync();
 
