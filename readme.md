@@ -53,7 +53,7 @@ The striking things is, we don't need to program this workflow, it is automatica
 
 ## How to Add to Claude Desktop
 
-You'll need [.NET 10](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) to build the MCP Server in your system.
+You'll need the [.NET 11 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/11.0) to build the MCP Server in your system.
 
 To add this MCP server to Claude Desktop, add the following to your configuration:
 
@@ -74,6 +74,6 @@ To add this MCP server to Claude Desktop, add the following to your configuratio
 
 ## Use in Visual Studio Code
 
-Install the [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) and open the repository root as a VS Code workspace. GitHub Copilot reads the root `.mcp.json`; trust the workspace and enable `utopia` if prompted. The configuration runs `sh ./run-mcp.sh` from the workspace root, so it requires a POSIX shell. The script sends build output to stderr and reserves stdout for MCP traffic.
+Install the [.NET 11 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/11.0) and open the repository root as a VS Code workspace. GitHub Copilot reads the root `.mcp.json`; trust the workspace and enable `utopia` if prompted. The configuration runs `sh ./run-mcp.sh` from the workspace root, so it requires a POSIX shell. The script sends build output to stderr and reserves stdout for MCP traffic.
 
 Pi users with `pi-mcp-adapter` can use the same `.mcp.json`: start Pi from the repository root. If Pi was already running when the configuration changed, run `/reload` and approve the updated server definition.
