@@ -23,7 +23,7 @@ namespace Utopia.HomeAutomation
         {
             lock (bedLock)
             {
-                string status = _isClimateOn ? $"Climate control ON, Target: {_targetTemperature:F1}캜, Current: {_currentTemperature:F1}캜, Time left: {_sleepSessionHours}h" : $"Climate control OFF, Last setpoint: {_targetTemperature:F1}캜, Current: {_currentTemperature:F1}캜";
+                string status = _isClimateOn ? $"Climate control ON, Target: {_targetTemperature:F1}째C, Current: {_currentTemperature:F1}째C, Time left: {_sleepSessionHours}h" : $"Climate control OFF, Last setpoint: {_targetTemperature:F1}째C, Current: {_currentTemperature:F1}째C";
                 return Task.FromResult(status);
             }
         }
@@ -43,7 +43,7 @@ namespace Utopia.HomeAutomation
                 _isClimateOn = true;
                 _climateTimer = new Timer(_ => SimulateClimate(), null, TimeSpan.Zero, TimeSpan.FromMinutes(1));
                 _sleepSessionTimer = new Timer(_ => EndSleepSession(), null, TimeSpan.FromHours(hours), Timeout.InfiniteTimeSpan);
-                return Task.FromResult($"Bed set for sleep: Target temperature {_targetTemperature:F1}캜 for {_sleepSessionHours} hours.");
+                return Task.FromResult($"Bed set for sleep: Target temperature {_targetTemperature:F1}째C for {_sleepSessionHours} hours.");
             }
         }
 
@@ -80,7 +80,7 @@ namespace Utopia.HomeAutomation
             {
                 if (!_isClimateOn || _isDisposed) return;
                 // Simulate temperature moving towards target
-                double changeRate = 0.2; // 캜 per minute
+                double changeRate = 0.2; // 째C per minute
                 if (Math.Abs(_currentTemperature - _targetTemperature) < changeRate)
                 {
                     _currentTemperature = _targetTemperature;

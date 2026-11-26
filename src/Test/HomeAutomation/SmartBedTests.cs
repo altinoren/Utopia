@@ -17,16 +17,19 @@ public class SmartBedTests
     {
         var status = await SmartBed.GetStatus();
         Assert.Contains("Climate control OFF", status);
+        Assert.Contains("°C, Current: ", status);
+        Assert.EndsWith("°C", status);
     }
 
     [Fact]
     public async Task SetForSleep_ActivatesClimateControl()
     {
         var result = await SmartBed.SetForSleep(19.5, 7);
-        Assert.Contains("Bed set for sleep", result);
+        Assert.Contains("19.5°C for 7 hours", result);
         var status = await SmartBed.GetStatus();
         Assert.Contains("Climate control ON", status);
-        Assert.Contains("19.5", status);
+        Assert.Contains("Target: 19.5°C, Current: ", status);
+        Assert.Contains("°C, Time left: ", status);
         Assert.Contains("7h", status);
     }
 

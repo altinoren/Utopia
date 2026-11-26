@@ -71,3 +71,9 @@ To add this MCP server to Claude Desktop, add the following to your configuratio
   }
 }
 ```
+
+## Use in Visual Studio Code
+
+Install the [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) and open the repository root as a VS Code workspace. GitHub Copilot reads the root `.mcp.json`; trust the workspace and enable `utopia` if prompted. The configuration runs `sh ./run-mcp.sh` from the workspace root, so it requires a POSIX shell. The script sends build output to stderr and reserves stdout for MCP traffic.
+
+Pi users with `pi-mcp-adapter` can use the same `.mcp.json`: start Pi from the repository root. If Pi was already running when the configuration changed, run `/reload` and approve the updated server definition.
